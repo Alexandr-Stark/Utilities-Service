@@ -19,7 +19,7 @@ public class Residence {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User users;
+    private User user;
     private String ownerName;
     private String ownerSurname;
     private String country;

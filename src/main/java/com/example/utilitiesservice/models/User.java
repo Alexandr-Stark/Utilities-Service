@@ -23,7 +23,12 @@ public class User {
     private String surname;
     private String middleName;
     private String email;
+    private String password;
     private String phone;
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id")
+    private Set<AccountRole> accountRoles;
+    @OneToMany(mappedBy = "user")
     private Set<Residence> residences;
+    @OneToMany(mappedBy = "user")
+    private Set<PaymentCard> paymentCards;
 }

@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Version UtilityMeter: 1.0
 */
 @Data
-@Entity
+@Entity(name = "utility_meters")
 public class UtilityMeter {
     @Id
     private Long id;
