@@ -9,15 +9,15 @@ package com.example.utilitiesservice.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @Data
 @Entity(name = "users")
 public class User {
     @Id
+    @GeneratedValue()
+    @Column(name = "user_id")
     private Long id;
     private String name;
     private String surname;
@@ -25,10 +25,7 @@ public class User {
     private String email;
     private String password;
     private String phone;
-    @OneToMany(mappedBy = "id")
-    private Set<AccountRole> accountRoles;
-    @OneToMany(mappedBy = "user")
-    private Set<Residence> residences;
-    @OneToMany(mappedBy = "user")
-    private Set<PaymentCard> paymentCards;
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private AccountRole role;
 }

@@ -2,10 +2,7 @@ package com.example.utilitiesservice.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /* Created by IntelliJ IDEA.
@@ -18,6 +15,8 @@ import java.time.LocalDateTime;
 @Entity(name = "utility_meters")
 public class UtilityMeter {
     @Id
+    @GeneratedValue()
+    @Column(name = "utility_meters_id")
     private Long id;
     @ManyToOne
     @JoinColumn(name = "bill_id")

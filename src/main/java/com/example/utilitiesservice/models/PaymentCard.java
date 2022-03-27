@@ -9,15 +9,13 @@ package com.example.utilitiesservice.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 @Entity(name = "payment_cards")
 public class PaymentCard {
     @Id
+    @GeneratedValue()
     private Long id;
     @ManyToOne
     @JoinColumn(name = "user_id")
