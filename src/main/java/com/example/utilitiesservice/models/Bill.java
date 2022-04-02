@@ -15,14 +15,14 @@ import java.util.Set;
 @Entity(name = "bills")
 public class Bill {
     @Id
+    @GeneratedValue()
+    @Column(name = "bill_id")
     private Long id;
     @ManyToOne
     @JoinColumn(name = "residence_id")
-    private Residence residences;
+    private Residence residence;
     private String personalAccountNumber;
-    @JoinTable(name = "utility_companies")
     @OneToOne
+    @JoinColumn(name = "company_id")
     private UtilityCompany company;
-    @OneToMany(mappedBy = "bill")
-    private Set<UtilityMeter> utilityMeters;
 }

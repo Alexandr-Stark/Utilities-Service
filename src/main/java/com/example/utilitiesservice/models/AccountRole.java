@@ -1,11 +1,14 @@
 package com.example.utilitiesservice.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Data;
 
+import javax.persistence.*;
+
+@Data
 @Entity(name = "account_roles")
 public class AccountRole {
     @Id
+    @GeneratedValue()
     private Long id;
     private String roleName;
 }

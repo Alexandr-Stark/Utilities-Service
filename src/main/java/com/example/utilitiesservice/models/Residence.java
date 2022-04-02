@@ -16,6 +16,8 @@ import java.util.Set;
 @Entity(name = "residences")
 public class Residence {
     @Id
+    @GeneratedValue()
+    @Column(name = "residence_id")
     private Long id;
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -28,6 +30,4 @@ public class Residence {
     private String house;
     private String corps;
     private String flat;
-    @OneToMany(mappedBy = "residences")
-    private Set<Bill> bills;
 }

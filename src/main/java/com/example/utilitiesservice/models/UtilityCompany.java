@@ -15,6 +15,8 @@ import javax.persistence.*;
 @Entity(name = "utility_companies")
 public class UtilityCompany  {
     @Id
+    @GeneratedValue()
+    @Column(name = "id")
     private Long id;
     private String companyName;
     private String iban;
