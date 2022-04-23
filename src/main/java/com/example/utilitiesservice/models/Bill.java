@@ -25,4 +25,5 @@ public class Bill {
     @OneToOne
     @JoinColumn(name = "company_id")
     private UtilityCompany company;
+    private Long price;
 }

@@ -1,5 +1,6 @@
 package com.example.utilitiesservice.controller;
 
+import com.example.utilitiesservice.dto.UserBillDto;
 import com.example.utilitiesservice.models.User;
 import com.example.utilitiesservice.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -38,8 +39,13 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    public ResponseEntity<Optional<User>> delete(@PathVariable Long id) {
+        return ResponseEntity.ok(service.delete(id));
+    }
+
+    @GetMapping("/bill/{id}")
+    public ResponseEntity<Optional<UserBillDto>> getBill(@PathVariable Long id){
+        return ResponseEntity.ok(service.getBill(id));
     }
 
 }

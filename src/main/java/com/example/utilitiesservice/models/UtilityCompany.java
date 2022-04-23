@@ -4,7 +4,7 @@ package com.example.utilitiesservice.models;
 @Project Name: Utilities-Service.UtilityCompanie 
 @Author: Alexandr Serbeniuk
 @DateTime: 20.02.2022|18:33 
-@Version UtilityCompanie: 1.0
+@Version UtilityCompanies: 1.0
 */
 
 import lombok.Data;
