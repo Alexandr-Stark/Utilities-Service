@@ -1,7 +1,9 @@
 package com.example.utilitiesservice.service;
 
+import com.example.utilitiesservice.dto.UserBillDto;
 import com.example.utilitiesservice.models.User;
 import com.example.utilitiesservice.repository.UserRepository;
+import com.example.utilitiesservice.utils.MappingUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +18,8 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository repo;
+    private final UtilityMeterService utilityMeterService;
+    private final MappingUtils mappingUtils;
 
     public List<User> getAll(Integer page, Integer size) {
         Pageable paging = PageRequest.of(page, size);
@@ -32,7 +36,15 @@ public class UserService {
         return repo.save(user);
     }
 
-    public void delete(Long id) {
+    public Optional<User> delete(Long id) {
+        var user = this.getById(id);
         repo.deleteById(id);
+        return user;
+    }
+
+    public Optional<UserBillDto> getBill (Long id) {
+        var meter = utilityMeterService.calculateTotalPrice(id);
+        if (meter == null) return null;
+        return Optional.of(mappingUtils.mapToUserBillDto(meter));
     }
 }

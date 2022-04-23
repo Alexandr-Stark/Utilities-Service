@@ -13,6 +13,7 @@ CREATE TABLE bills
     residence_id            BIGINT,
     personal_account_number VARCHAR(255),
     company_id              BIGINT,
+    price                BIGINT,
     CONSTRAINT pk_bills PRIMARY KEY (bill_id)
 );
 
