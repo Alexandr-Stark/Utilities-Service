@@ -7,11 +7,17 @@ package com.example.utilitiesservice.models;
 @Version PaymentCard: 1.0
 */
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "payment_cards")
 public class PaymentCard {
     @Id

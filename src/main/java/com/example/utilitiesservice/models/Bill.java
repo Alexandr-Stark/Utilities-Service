@@ -1,6 +1,9 @@
 package com.example.utilitiesservice.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,6 +15,9 @@ import java.util.Set;
 @Version Bill: 1.0
 */
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "bills")
 public class Bill {
     @Id
