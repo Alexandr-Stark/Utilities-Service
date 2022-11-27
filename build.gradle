@@ -32,6 +32,7 @@ dependencies {
     implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
     implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.6'
     implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+    implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.7.3'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'

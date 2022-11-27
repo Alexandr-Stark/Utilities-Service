@@ -31,8 +31,17 @@ public class UserService {
         return repo.findById(id);
     }
 
+    public User getByEmail(String email) {
+        return repo.findByEmail(email);
+    }
+
     public User save(User user) {
         return repo.save(user);
+    }
+
+    public String create(Long id, String name, String surname, String middleName, String email, String pass, String ph, Long roleId) {
+        repo.create(id, name, surname, middleName, email, pass, ph, roleId);
+        return "User Successfully created";
     }
 
     public Optional<User> delete(Long id) {
